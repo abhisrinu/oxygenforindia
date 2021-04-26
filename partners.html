@@ -1,0 +1,144 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+  	.partner {
+	    border: 1px black dotted;
+	    width: 250px;
+	    padding: 3%;
+	    height: 250px;
+	    margin: 2%;
+	}
+
+	.partnerName {
+	    position: absolute;
+	    bottom: 0px;
+	}
+
+
+	@media (min-width: 1200px)
+.container {
+    width: 900px;
+}
+
+@media (min-width: 992px)
+.container {
+    width: 970px;
+}
+  </style>
+
+</head>
+<body>
+
+	  <div class="container mb-4">
+        <div class="media-container-row">
+            <div class="col-12 align-center">
+                <h2 class="mbr-section-title pb-2 mbr-fonts-style display-2">
+                    Our Partners
+                </h2>
+                <h3 class="mbr-section-subtitle mbr-light mbr-fonts-style display-7">
+                    Companies who have partnered with us to get us here
+                </h3>
+            </div>
+        </div>
+    </div>
+
+
+<div class="container" id="partnersOuter">
+        <div class="row align-center justify-content-center">
+           
+        </div>
+    </div>
+
+
+<script>
+// self executing function here
+(function() {
+   var partners=[
+		{
+			name:'Tech Mahindra',
+			description:'',
+			logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Tech_Mahindra_New_Logo.svg/1280px-Tech_Mahindra_New_Logo.svg.png',
+			url:'https://www.techmahindra.com/en-in/?f=3795333132'
+		},
+		{
+			name:'Partner 1',
+			description:'Contributed in terms of technology',
+			logo:'https://images.livemint.com/img/2020/02/02/600x338/techm_1580659916850.JPG',
+			url:'http://google.com'
+		},
+		{
+			name:'Partner 2',
+			description:'',
+			logo:'https://images.livemint.com/img/2020/02/02/600x338/techm_1580659916850.JPG',
+			url:'http://google.com'
+		},
+		{
+			name:'Partner 3',
+			description:'',
+			logo:'https://images.livemint.com/img/2020/02/02/600x338/techm_1580659916850.JPG',
+			url:'http://google.com'
+		},
+		{
+			name:'Partner 4',
+			description:'',
+			logo:'https://images.livemint.com/img/2020/02/02/600x338/techm_1580659916850.JPG',
+			url:'http://google.com'
+		},
+		{
+			name:'Partner 5',
+			description:'',
+			logo:'https://images.livemint.com/img/2020/02/02/600x338/techm_1580659916850.JPG',
+			url:'http://google.com'
+		},
+		{
+			name:'Partner 6',
+			description:'',
+			logo:'https://images.livemint.com/img/2020/02/02/600x338/techm_1580659916850.JPG',
+			url:'http://google.com'
+		}
+
+	];
+	var i=0,str='';
+	partners.forEach(
+		function (a) {
+			str+='<a href="'+a.url+'">';
+			str+='<div class="p-3 col-12 col-md-6 col-lg-3 partner" id="partner_'+i+++'"" title="'+(a.description?a.description:a.name)+'" >';
+            str+='<div class="client-wrapper">';
+            str+='<div class="wrap-img">';
+			// <div class="partner" ';
+			// str+='<img class="partnerLogo" src="'+a.logo+'" alt="'+a.name+'" />';
+			// str+='<span class="partnerName">'+a.name+'</span>';
+			// str+='</div>';
+
+
+			
+            str+='<img src="'+a.logo+'" class="img-responsive clients-img partnerLogo">';
+             str+=`</div>
+                    <div class="card-box partnerName">
+                        <h3 class="client-name mbr-fonts-style display-5">`
+             str+=a.name;
+				str+=`</h3>
+                          
+                    </div> 
+                </div>
+            </div></a>`
+		}
+	);
+
+			document.getElementById('partnersOuter').innerHTML=(str);
+})();
+</script>
+</body>
+</html>
+
+
